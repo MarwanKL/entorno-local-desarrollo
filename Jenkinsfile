@@ -8,8 +8,8 @@ pipeline {
         }
         stage('Ejecución de tests') {
             steps {
-                bat 'pip install -r requirements.txt'
-                bat 'pytest'
+                bat 'C:\\Users\\marwa\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\pip.exe install -r requirements.txt'
+                bat 'C:\\Users\\marwa\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\pytest.exe'
             }
         }
         stage('Proceso de lintado') {
