@@ -1,4 +1,4 @@
-#1-CLONAR REPOSITORIO EN LOCAL
+# CLONAR REPOSITORIO EN LOCAL
 
 	git clone https://github.com/MarwanKL/entorno-local-desarrollo
 
