@@ -8,18 +8,18 @@ pipeline {
         }
         stage('Ejecución de tests') {
             steps {
-                sh 'pip install -r requirements.txt'
-                sh 'pytest'
+                bat 'pip install -r requirements.txt'
+                bat 'pytest'
             }
         }
         stage('Proceso de lintado') {
             steps {
-                sh 'flake8'
+                bat 'flake8'
             }
         }
         stage('Creación de imagen Docker') {
             steps {
-                sh 'docker build -t marwaann/repo .'
+                bat 'docker build -t marwaann/repo .'
             }
         }
         stage('Subida del resultado a Docker Hub') {
@@ -28,8 +28,8 @@ pipeline {
             }
             steps {
                 withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials', passwordVariable: 'dckr_pat_QjdtktcnEg0K2DbS190ceN6Xj9Q', usernameVariable: 'marwaann')]) {
-                    sh 'docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD'
-                    sh 'docker push marwaann/repo'
+                    bat 'docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD'
+                    bat 'docker push marwaann/repo'
                 }
             }
         }
