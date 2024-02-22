@@ -1,9 +1,9 @@
 # SOFTWARE UTILIZADO
 
- 	- Base de datos MySql
-  	- Python 3.12
-   	- GIT
-    	- Pytest
+ 	* Base de datos MySql
+  	* Python 3.12
+   	* GIT
+	* Pytest
 
 
 
@@ -81,7 +81,7 @@
 # 10-COMANDO PARA EJECUTAR PRUEBAS UNITARIAS
 
 	pytest --cov=RUTA_REPOSITORIO_CLONADO/tests/
-
+	IMPORTANTE instalar pytest usando "pip install pytest"
 
  
 
