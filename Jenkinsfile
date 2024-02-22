@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clonado de código fuente') {
             steps {
-                git 'https://github.com/MarwanKL/entorno-local-desarrollo'
+                git "https://github.com/MarwanKL/entorno-local-desarrollo"
             }
         }
         stage('Ejecución de tests') {
