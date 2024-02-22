@@ -8,7 +8,8 @@ pipeline {
         }
         stage('Ejecución de tests') {
             steps {
-                sh 'py -m unittest discover'
+                sh 'pip install -r requirements.txt'
+                sh 'pytest'
             }
         }
         stage('Proceso de lintado') {
