@@ -1,3 +1,12 @@
+# SOFTWARE UTILIZADO
+
+ 	- Base de datos MySql
+  	- Python 3.12
+   	- GIT
+    	- Pytest
+
+
+
 # 1-CLONAR REPOSITORIO EN LOCAL
 
 	git clone https://github.com/MarwanKL/entorno-local-desarrollo
@@ -72,6 +81,11 @@
 # 10-COMANDO PARA EJECUTAR PRUEBAS UNITARIAS
 
 	pytest --cov=RUTA_REPOSITORIO_CLONADO/tests/
+
+
+ 
+
+
 
 
 
