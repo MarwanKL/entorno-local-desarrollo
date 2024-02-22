@@ -9,7 +9,7 @@ pipeline {
         stage('Ejecución de tests') {
             steps {
                 bat 'C:\\Users\\marwa\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\pip.exe install -r requirements.txt'
-                bat 'C:\\Users\\marwa\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\pytest.exe --cov=tests/'
+                bat 'C:\\Users\\marwa\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\pytest.exe --cov=.\tests'
             }
         }
         stage('Proceso de lintado') {
