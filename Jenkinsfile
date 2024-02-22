@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Proceso de lintado') {
             steps {
-                bat 'C:\\Users\\marwa\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\flake8.exe'
+                bat 'C:\\Users\\marwa\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\flake8.exe \\tests'
             }
         }
         stage('Creación de imagen Docker') {
