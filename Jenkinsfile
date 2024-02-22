@@ -1,42 +1,35 @@
 pipeline {
     agent any
-
     stages {
         stage('Clonado de código fuente') {
             steps {
-                echo 'Clonando el código fuente...'
-                checkout scm
+                git 'https://github.com/MarwanKL/entorno-local-desarrollo'
             }
         }
-
         stage('Ejecución de tests') {
             steps {
-                echo 'Ejecutando tests...'
-                // Coloca aquí los comandos para ejecutar tus tests
+                sh 'py -m unittest discover'
             }
         }
-
         stage('Proceso de lintado') {
             steps {
-                echo 'Realizando lintado...'
-                // Coloca aquí los comandos para el lintado con flake8 u otra herramienta
+                sh 'flake8'
             }
         }
-
         stage('Creación de imagen Docker') {
             steps {
-                echo 'Construyendo la imagen Docker...'
-                // Coloca aquí los comandos para construir la imagen Docker
+                sh 'docker build -t marwaann/repo .'
             }
         }
-
-        stage('Subida del resultado') {
+        stage('Subida del resultado a Docker Hub') {
             when {
                 expression { env.BRANCH_NAME == 'develop' || env.BRANCH_NAME == 'master' || env.BRANCH_NAME == 'main' }
             }
             steps {
-                echo 'Subiendo el resultado a algún Registry...'
-                // Coloca aquí los comandos para subir el resultado a tu Registry
+                withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials', passwordVariable: 'dckr_pat_QjdtktcnEg0K2DbS190ceN6Xj9Q', usernameVariable: 'marwaann')]) {
+                    sh 'docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD'
+                    sh 'docker push marwaann/repo'
+                }
             }
         }
     }
