@@ -4,38 +4,39 @@ pipeline {
     stages {
         stage('Clonado de código fuente') {
             steps {
-                git 'https://tu-usuario@tu-repo.git'
+                echo 'Clonando el código fuente...'
+                checkout scm
             }
         }
 
         stage('Ejecución de tests') {
             steps {
-                sh 'python -m pytest'
+                echo 'Ejecutando tests...'
+                // Coloca aquí los comandos para ejecutar tus tests
             }
         }
 
         stage('Proceso de lintado') {
             steps {
-                sh 'flake8'
+                echo 'Realizando lintado...'
+                // Coloca aquí los comandos para el lintado con flake8 u otra herramienta
             }
         }
 
         stage('Creación de imagen Docker') {
             steps {
-                script {
-                    // Lógica para construir la imagen Docker
-                }
+                echo 'Construyendo la imagen Docker...'
+                // Coloca aquí los comandos para construir la imagen Docker
             }
         }
 
-        stage('Subida a Registry') {
+        stage('Subida del resultado') {
             when {
-                expression { currentBuild.resultIsBetterOrEqualTo('SUCCESS') }
+                expression { env.BRANCH_NAME == 'develop' || env.BRANCH_NAME == 'master' || env.BRANCH_NAME == 'main' }
             }
             steps {
-                script {
-                    // Lógica para subir la imagen Docker al Registry
-                }
+                echo 'Subiendo el resultado a algún Registry...'
+                // Coloca aquí los comandos para subir el resultado a tu Registry
             }
         }
     }
