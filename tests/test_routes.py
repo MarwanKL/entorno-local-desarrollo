@@ -4,12 +4,13 @@ from app import db
 from app.models import Data
 from app.routes import data_routes
 
+
 def test_insert_data_route():
     # Crear una aplicación Flask para las pruebas
     test_app = Flask(__name__)
     test_app.config['TESTING'] = True
     test_app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///:memory:'
-    
+
     # Configurar la aplicación de prueba con la extensión SQLAlchemy
     db.init_app(test_app)
 
@@ -33,12 +34,14 @@ def test_insert_data_route():
         data_count = Data.query.filter_by(name="Test Data").count()
         assert data_count == 1
 
+
 def test_get_all_data_route():
-    # Similar a test_insert_data_route, pero para la ruta de obtener todos los datos
+    # Similar a test_insert_data_route, pero para la ruta de obtener los datos
     # Puedes crear más pruebas para otras rutas según sea necesario
     pass
 
+
 def test_delete_data_route():
-    # Similar a test_insert_data_route, pero para la ruta de eliminar datos por ID
+    # Como test_insert_data_route, pero para la ruta de eliminar datos por ID
     # Puedes crear más pruebas para otras rutas según sea necesario
     pass

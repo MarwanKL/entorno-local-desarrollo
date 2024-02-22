@@ -1,6 +1,7 @@
 # tests/test_models.py
 from app.models import Data
 
+
 def test_data_model():
     # Crear una instancia de la clase Data
     data_instance = Data(id=1, name="Test Data")
