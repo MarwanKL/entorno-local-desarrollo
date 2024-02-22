@@ -49,9 +49,9 @@
 
 
 
-# 8-COMPROBAR FUNCIONAMIENTO ED LA APLICACIÓN 
+# 8-COMPROBAR FUNCIONAMIENTO DE LA APLICACIÓN 
 
-	>ENTRANDO EN "http://127.0.0.1:5000/data", SI APARECEN LOS DATOS DE LA TABLA SE HA CONSEGUIDO SATISFACTORIAMENTE LA EJECUCIÓN DE LA APLICACIÓN Y LA CONEXIÓN A LA BASE DE DATOS.
+	> ENTRANDO EN "http://127.0.0.1:5000/data", SI APARECEN LOS DATOS DE LA TABLA SE HA CONSEGUIDO SATISFACTORIAMENTE LA EJECUCIÓN DE LA APLICACIÓN Y LA CONEXIÓN A LA BASE DE DATOS.
 
 
 
@@ -61,10 +61,10 @@
 	Insertar datos: curl -X POST -H "Content-Type: application/json" -d '{"name": "Nuevo Dato"}' http://127.0.0.1:5000/data
 
 
-	**Obtener datos:** curl http://127.0.0.1:5000/data
+	Obtener datos: curl http://127.0.0.1:5000/data
 
 
-	**Eliminar los datos por i:** curl -X DELETE http://127.0.0.1:5000/data/<id>
+	Eliminar los datos por id: curl -X DELETE http://127.0.0.1:5000/data/<id>
 
 
 
