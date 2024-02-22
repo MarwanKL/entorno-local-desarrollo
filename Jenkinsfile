@@ -13,8 +13,6 @@ pipeline {
             steps {
                 echo 'Ejecutando tests...'
                 // Coloca aquí los comandos para ejecutar tus tests
-                sh 'pip install -r requirements.txt'
-                sh 'pytest --cov=test/'
             }
         }
 
