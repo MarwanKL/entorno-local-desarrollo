@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Proceso de lintado') {
             steps {
-                bat 'C:\\Users\\marwa\\Documents\\QUALENTUM BOOTCAMP\\19-PROYECTO FINAL\\entorno\\entorno-local-desarrollo\\venv\\Scripts\\flake8'
+                bat 'C:\\Users\\marwa\\Documents\\QUALENTUM BOOTCAMP\\19-PROYECTO FINAL\\entorno\\entorno-local-desarrollo\\venv\\Scripts\\flake8.exe'
             }
         }
         stage('Creación de imagen Docker') {
