@@ -9,6 +9,8 @@ COPY . /app
 
 # Instala las dependencias de la aplicación
 RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install mysqlclient
+
 
 # Expone el puerto 5000 (ajusta según el puerto de tu aplicación)
 EXPOSE 5000
