@@ -16,4 +16,5 @@ RUN pip install mysqlclient
 EXPOSE 5000
 
 # Comando para ejecutar tu aplicación cuando se inicie el contenedor
+CMD ["python", "manage.py"]
 CMD ["python", "run.py"]
