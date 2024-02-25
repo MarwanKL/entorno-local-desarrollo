@@ -16,7 +16,7 @@ class TestConfig(unittest.TestCase):
         self.assertEqual(
             config.SQLALCHEMY_DATABASE_URI,
             os.environ.get
-            ("DATABASE_URL", "mysql://marwan:marwan@localhost/prueba")
+            ("DATABASE_URL", "mysql://marwan:prueba@localhost/prueba")
         )
 
     def test_config_track_modifications(self):
