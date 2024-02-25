@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('Clonado de codigo fuente') {
+        stage('Clonado codigo fuente') {
             steps {
                 checkout scm
             }
