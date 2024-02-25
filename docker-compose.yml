@@ -12,5 +12,4 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: marwan
       MYSQL_DATABASE: hola
-      MYSQL_USER: root
       MYSQL_PASSWORD: marwan

@@ -1,12 +1,12 @@
 pipeline {
     agent any
     stages {
-        stage('Clonado de código fuente') {
+        stage('Clonado de codigo fuente') {
             steps {
                 checkout scm
             }
         }
-        stage('Ejecución de tests') {
+        stage('Ejecucion de tests') {
             steps {
                 bat 'C:\\Users\\marwa\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\pip.exe install -r requirements.txt'
                 bat 'C:\\Users\\marwa\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\pytest.exe --cov=.\\tests'
@@ -17,7 +17,7 @@ pipeline {
                 bat 'C:\\Users\\marwa\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\flake8.exe tests/'
             }
         }
-        stage('Creación de imagen Docker') {
+        stage('Creacion de imagen Docker') {
             steps {
                 bat 'docker build -t marwaann/repo .'
             }

@@ -16,7 +16,7 @@ class TestConfig(unittest.TestCase):
         self.assertEqual(
             config.SQLALCHEMY_DATABASE_URI,
             os.environ.get
-            ("DATABASE_URL", "mysql://root:marwan@mysql-container/hola")
+            ("DATABASE_URL", "mysql://root:marwan@localhost:3306/hola")
         )
 
     def test_config_track_modifications(self):
@@ -27,13 +27,12 @@ class TestConfig(unittest.TestCase):
         config = DevelopmentConfig()
         self.assertTrue(config.DEBUG)
         self.assertEqual(
-            config.SECRET_KEY,
-            os.environ.get("SECRET_KEY", "your_secret_key")
+            config.SECRET_KEY,localhost.environ.get("SECRET_KEY", "your_secret_key")
         )
         self.assertEqual(
             config.SQLALCHEMY_DATABASE_URI,
             os.environ.get
-            ("DATABASE_URL", "mysql://root:marwan@mysql-container/hola")
+            ("DATABASE_URL", "mysql://root:marwan@localhost:3306/hola")
         )
         self.assertFalse(config.SQLALCHEMY_TRACK_MODIFICATIONS)
 
@@ -47,7 +46,7 @@ class TestConfig(unittest.TestCase):
         self.assertEqual(
             config.SQLALCHEMY_DATABASE_URI,
             os.environ.get
-            ("DATABASE_URL", "mysql://root:marwan@mysql-container/hola")
+            ("DATABASE_URL", "mysql://root:marwan@localhost:3306/hola")
         )
         self.assertFalse(config.SQLALCHEMY_TRACK_MODIFICATIONS)
 
